@@ -1,4 +1,2 @@
-dainiusjocas.github.io
-======================
+Blog on programming.
 
-Blog on programming
