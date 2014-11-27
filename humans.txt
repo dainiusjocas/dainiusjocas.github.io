@@ -1,21 +1,20 @@
 /* TEAM */
-                            
-Your title: Your name.                        
-Site: email, link to a contact form, etc.                         
-Twitter: your Twitter username.                        
-Location: City, Country.
+
+Your title: Dainius Jocas.
+Site: dainius.jocas@gmail.com
+Twitter: @dainius_jocas.
+Location: Vilnius, Lithuania.
 
 
 /* THANKS */
 
-HTML5 Muffin
-This is a Frappuccino Blog
-Name: name or url
+This is a cool blog
+Name: Dainius Jocas
 
-                            
+
 /* SITE */
-                          
-Last update: YYYY/MM/DD                    
-Standards: HTML5, CSS3,..                   
-Components: Modernizr, jQuery, etc.                            
+
+Last update: 2014/11/27
+Standards: HTML5, CSS3,..
+Components: Modernizr, jQuery, etc.
 Software: Software used for the development
