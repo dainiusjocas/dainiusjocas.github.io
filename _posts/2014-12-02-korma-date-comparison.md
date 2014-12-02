@@ -1,6 +1,6 @@
 ---
 layout: post_page
-title: `timestamp` in `WHERE` clause in Korma
+title: Timestamp comparison in Korma
 ---
 
 It seems that I've been barking at the wrong tree.
@@ -11,11 +11,14 @@ After lots of time full of struggles while trying to use various date types that
 
 Here is an example that ilustrates how to work with `timestamp` type in the `where` clause with Korma:
 
-<pre>
-(defn example []
-  (select records
+
+```clojure
+    (defn example []
+      (select records
           (fields :date)
           (where {:date [< "2014-12-02"]})))
-</pre>
+```
 
 I've learned that lesson. I hope this might help for someone.
+
+
