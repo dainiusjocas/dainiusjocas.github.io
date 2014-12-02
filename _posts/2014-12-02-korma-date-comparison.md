@@ -12,7 +12,7 @@ After lots of time full of struggles while trying to use various date types that
 Here is an example that ilustrates how to work with `timestamp` type in the `where` clause with Korma:
 
 
-```clojure
+```
     (defn example []
       (select records
           (fields :date)
