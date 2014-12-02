@@ -1,8 +1,4 @@
 ---
-published: false
----
-
----
 layout: post_page
 title: `timestamp` in `WHERE` clause in Korma
 ---
