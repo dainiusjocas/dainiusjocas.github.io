@@ -1,75 +1,310 @@
----
-layout: default
-title: Homepage
----
-<!-- Content
-    ================================================== -->
-  <div class="top-strip"></div>
-  <div class="content">
-    <main class="container">
-    	<div class="row-fluid">
-    		<section class="content">
-    		  <h1>Recent Posts</h1>
-    		</section>
-    		<ul class="entries">
-    		{% for post in paginator.posts %}
-    		  <li>
-    		    <a href="{{ post.url }}">
-                      <span>{{ post.date | date: "%d %B %Y" }}</span>
-    		        <h3>{{ post.title }}</h3>
-                      <div>{{ post.content |truncatehtml | truncatewords: 30 }}</div>
-    		    </a>
-    		  </li>
-    		{% endfor %}
-    		</ul>
-    	</div>
-      <hr>
-      <div id="post-pagination">
-        {% if paginator.previous_page %}
-        <p class="prev">
-          {% if paginator.previous_page == 1 %}
-          <a href="/">Previous</a>
-          {% else %}
-          <a href="/page{{paginator.previous_page}}"> Previous</a>
-          {% endif %}
-        </p>
-        {% else %}
-<!--         <p class="prev disabled">
-          <span>Previous</span>
-        </p> -->
-        {% endif %}
+<!DOCTYPE html>
+<html lang="en">
 
-        <ul class="pages">
-          <li class="page">
-            {% if paginator.page == 1 %}
-<!--             <span class="current-page">1</span> -->
-            {% else %}
-            <a href="/">1</a>
-            {% endif %}
-          </li>
+<head>
 
-          {% for count in (2..paginator.total_pages) %}
-          <li class="page">
-            {% if count == paginator.page %}
-            <span class="current-page">{{count}}</span>
-            {% else %}
-            <a href="/page{{count}}">{{count}}</a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Personal website">
+  <meta name="author" content="Dainius Jocas">
 
-        {% if paginator.next_page %}
-        <p class="next">
-          <a href="/page{{paginator.next_page}}">Next</a>
-        </p>
-        {% else %}
-<!--         <p class="next disabled">
-          <span>Next</span>
-        </p> -->
-        {% endif %}
+  <title>Dainius Jocas</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+  <style>
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Dainius Jocas</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Dainius
+          <span class="text-primary">Jocas</span>
+        </h1>
+        <div class="subheading mb-5">Vilnius · Lithuania, LT-03210 · (370) 68600597 ·
+          <a href="mailto:dainius.jocas@pm.me">dainius.jocas@pm.me</a>
+        </div>
+        <p class="lead mb-5">I'm an experienced software engineer specialised in systems for natural language processing (NLP) and full-text search.
+          </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/dainius-jocas/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/dainiusjocas">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/dainius_jocas">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.goodreads.com/dainius_jocas">
+            <i class="fab fa-goodreads"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">CTO</h3>
+            <div class="subheading mb-3">TokenMill UAB</div>
+            <p>
+              Guiding software development projects from architectural decisions all the way to contributing code.
+              <br>Managing innovation initiatives and taking care of technical debt.
+              <br>Overseeing open source software initiatives.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">January 2019 - Present</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Engineer</h3>
+            <div class="subheading mb-3">TokenMill UAB</div>
+            <p>
+              Design and implementation of various semantic text search and NLP focused systems.
+              <br>Leading the development of a large scale news crawling and analysis system.
+              <br>Implementation of DevOps practices.
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">November 2014 - December 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Architect</h3>
+            <div class="subheading mb-3">TNS LT</div>
+            <p>
+              Deployment of a television audience measurement system.
+              <br>Design and implementation of workflow automation tools.
+              <br>Maintenance of legacy software systems. 
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">March 2014 - October 2014</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Intern</h3>
+            <div class="subheading mb-3">SAP Labs France</div>
+            <p>Development of an invariant detection system for server-side JavaScript applications.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2013 - December 2013</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Oracle DBA</h3>
+            <div class="subheading mb-3">IT&T systems UAB</div>
+            <p>Administration of Oracle 11g databases.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2011 - August 2012</span>
+          </div>
+        </div>
+
       </div>
 
-    </main>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Education</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Free University of Bozen-Bolzano</h3>
+            <div class="subheading mb-3">Master in Computer Science</div>
+            <div>Computer Science - Information Systems Track</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">October 2012 - December 2015</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Vilnius University</h3>
+            <div class="subheading mb-3">Software Engineering</div>
+            <div>Computer Science - Software Engineering Track</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">September 2008 - June 2012</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Skills</h2>
+
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="list-inline dev-icons">
+          <li class="list-inline-item">
+            <i class="fab fa-github"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-gitlab"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-java"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-linux"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-android"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-slack"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-docker"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-jenkins"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-jira"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-aws"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-git"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-firefox"></i>
+          </li>
+          <li class="list-inline-item">
+            Lucene
+          </li>
+          <li class="list-inline-item">
+            Elasticsearch
+          </li>
+          <li class="list-inline-item">
+            Clojure
+          </li>
+        </ul>
+
+        <div class="subheading mb-3">Principles</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Good software development starts with building a clear understanding of the problem you want to solve.</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Manage complexity by reusing "boring technologies" and innovating only where it makes sense.</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Software projects rarely fail because they are too small; they fail because they get too big.</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            The hard limit to system complexity is not the quantity of engineering effort, but its quality.</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Software is about developing knowledge more than writing code.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">Interests</h2>
+        <p>Apart from being a software engineer, I try to keep learning new things ranging from an advanced basketball statistics to grilling and trying out sports such as beach voleyball. My motto is that I have to go to sleep at least a little bit more clever than when I woke up.</p>
+        <p>I'm a proud owner of three lovely Bernese Mountain Dogs.</p>
+        <p class="mb-0"></p>
+      </div>
+    </section>
+
   </div>
 
+  <div class="footer">
+    <p>Copyright &copy; 2019 Dainius Jocas.</p>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
